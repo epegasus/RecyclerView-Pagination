@@ -39,17 +39,17 @@ Add RecyclerView-Pagination dependencies in App level build.gradle.
             setView(binding.recyclerViewMain)
             submitCompleteList(titleList, object : PaginationCallbacks<String> {
                 override fun onPreload() {
-                    binding.progressBarMain.visibility = View.VISIBLE
+                    // Show ProgressBar
                 }
 
                 override fun onLoaded(subList: List<String>) {
-                    binding.progressBarMain.visibility = View.GONE
-                    adapterMainFeature.submitList(subList)
+                    // Hide ProgressBar
+                    // Update Adapter (Notify)
                 }
 
                 override fun onCompleted() {
-                    binding.progressBarMain.visibility = View.GONE
-                    Toast.makeText(this@MainActivity, "Reached to End", Toast.LENGTH_SHORT).show()
+                    // Hide ProgressBar
+                    // List has been reached to end
                 }
             })
         }
