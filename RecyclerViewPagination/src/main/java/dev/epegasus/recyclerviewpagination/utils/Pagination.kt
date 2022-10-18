@@ -14,7 +14,6 @@ fun RecyclerView.addOnScrolledToEnd(onScrolledToEnd: () -> Unit) {
         override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
 
             with(layoutManager as LinearLayoutManager) {
-
                 val visibleItemCount = childCount
                 val totalItemCount = itemCount
                 val firstVisibleItem = findFirstVisibleItemPosition()
